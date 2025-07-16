@@ -1,0 +1,27 @@
+# Configurações para o painel da Hostinger
+
+## Python App Configuration
+- Python Version: 3.11
+- Application Root: /public_html/api
+- Startup File: app.py
+- Environment Variables:
+  * FLASK_ENV=production
+  * SECRET_KEY=[valor do .env]
+  * DATABASE_URL=sqlite:////home/usuario/public_html/database/contestare.db
+  * JWT_SECRET_KEY=[valor do .env]
+  * CORS_ORIGINS=https://contestaredocexpress.com,https://app.contestaredocexpress.com
+
+## Subdomain Configuration
+- app.contestaredocexpress.com → /public_html/app
+- api.contestaredocexpress.com → /public_html/api
+
+## SSL Configuration
+- Enable SSL for all subdomains
+- Force HTTPS redirect
+- Use Let's Encrypt certificates
+
+## File Permissions
+- Database directory: 755
+- Database file: 644
+- Python files: 644
+- Static files: 644

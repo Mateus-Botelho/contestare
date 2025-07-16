@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect all requests to Python app
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ app.py/$1 [QSA,L]
+
+# CORS headers
+Header always set Access-Control-Allow-Origin "https://contestaredocexpress.com"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+# Security
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
