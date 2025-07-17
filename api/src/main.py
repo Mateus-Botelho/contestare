@@ -21,7 +21,17 @@ app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'sta
 app.config['SECRET_KEY'] = 'contestare_doc_express_secret_key_2024'
 
 # Habilitar CORS para todas as rotas
-CORS(app, supports_credentials=True)
+from dotenv import load_dotenv
+load_dotenv()  # ADICIONAR ESTA LINHA!
+
+import os
+print("=== DEBUG CORS ===")
+print(f"CORS_ORIGINS raw: {os.getenv('CORS_ORIGINS')}")
+cors_origins = os.getenv('CORS_ORIGINS', '').split(',')
+print(f"CORS Origins list: {cors_origins}")
+print("==================")
+
+CORS(app, origins=cors_origins, supports_credentials=True)
 
 # Registrar blueprints
 app.register_blueprint(user_bp, url_prefix='/api')
