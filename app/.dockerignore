@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Build (se usar framework)
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.development
+.env.production
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentation
+*.md
+README*
+
+# Temporary
+*~
+*.tmp
+*.temp

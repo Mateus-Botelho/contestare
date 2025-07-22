@@ -1,3 +1,4 @@
 venv/*
 api/venv/*
 api/.env
+portainer-stack.yaml
