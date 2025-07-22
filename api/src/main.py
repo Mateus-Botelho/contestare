@@ -29,11 +29,12 @@ print("=== DEBUG CORS ===")
 print(f"CORS_ORIGINS raw: {os.getenv('CORS_ORIGINS')}")
 cors_origins = os.getenv('CORS_ORIGINS', '').split(',')
 print(f"CORS Origins list: {cors_origins}")
-print("🚨 USANDO CORS ABERTO PARA TESTE!")
+print("✅ USANDO CORS ESPECÍFICO COM CREDENTIALS")
 print("==================")
 
-# CORS aberto para qualquer origem (apenas para teste)
-CORS(app, origins="*", supports_credentials=False)
+# CORS específico para produção com credentials
+CORS(app, origins=cors_origins, supports_credentials=True)
+
 # Registrar blueprints
 app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
